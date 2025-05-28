@@ -9,7 +9,7 @@ GUI for calculating partial radial distribution functions (PRDF) and RDF from CP
 6) pip install -r requirements.txt
 7) streamlit run app.py
 
-# Tested versions
+# Tested Python and packages versions
 - Python 3.13.3
 
 - streamlit 1.45.1
