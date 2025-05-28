@@ -8,3 +8,15 @@ GUI for calculating partial radial distribution functions (PRDF) and RDF from CP
 5) source prdf_env/bin/activate
 6) pip install -r requirements.txt
 7) streamlit run app.py
+
+# Tested versions
+Python 3.13.3
+
+streamlit 1.45.1
+pymatgen 2025.5.2
+matminer 0.9.3
+ase 3.25.0
+numpy 2.2.6
+pandas 2.2.3
+scipy 1.15.3
+matplotlib 3.10.3
