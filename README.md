@@ -4,7 +4,7 @@ GUI for calculating partial radial distribution functions (PRDF) and RDF from CP
 # How to compile
 1) git clone https://github.com/bracerino/PRDF-CP2K-LAMMPS.git
 3) cd PRDF-CP2K-LAMMPS/
-4) python3 -m venv sqs_env
-5) source sqs_env/bin/activate
+4) python3 -m venv prdf_env
+5) source prdf_env/bin/activate
 6) pip install -r requirements.txt
 7) streamlit run app.py
