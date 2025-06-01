@@ -14,7 +14,7 @@ from ase.io import read
 from pymatgen.core.structure import Structure
 from pymatgen.io.ase import AseAtomsAdaptor
 from matminer.featurizers.structure import PartialRadialDistributionFunction
-
+import streamlit.components.v1 as components
 st.set_page_config(page_title="CP2K XYZ PRDF Calculator", layout="wide")
 
 import numpy as np
@@ -1785,9 +1785,28 @@ def create_smoothed_plot(distances, prdf_data, comb, smoothing_params, hex_color
     return fig
 
 
-st.title("CP2K XYZ / LAMMPS Trajectory PRDF Calculator")
+
+components.html(
+    """
+    <head>
+        <meta name="description" content="XRDlicious submodule:  Calculate PRDF from XYZ or LAMMPS trajectories">
+    </head>
+    """,
+    height=0,
+)
+
 st.markdown(
-    "Into sidebar, upload your CP2K XYZ or LAMMPS trajectory file to calculate Partial Radial Distribution Functions")
+    "#### XRDlicious submodule:  PRDF Calculator from CP2K XYZ / LAMMPS Trajectories ")
+col1_header, col2_header = st.columns([1.25, 1])
+
+with col2_header:
+    st.info(
+        "🌀 Developed by [IMPLANT team](https://implant.fs.cvut.cz/). 📺 [Quick tutorial HERE.](https://www.youtube.com/watch?v=7ZgQ0fnR8dQ&ab_channel=Implantgroup)"
+    )
+with col1_header:
+    st.info("Visit the main [XRDlicious](http://xrdlicious.com) page")
+blue_divider()
+
 
 if 'calc_rdf' not in st.session_state:
     st.session_state.calc_rdf = False
@@ -2089,7 +2108,7 @@ if uploaded_file:
                         else:
                             processed_frames = sampled_frames
                             coord_status = "original"
-
+                        st.info("Creating XYZ content...")
                         # Create XYZ content (use optimized version)
                         xyz_content = create_xyz_with_lattice_optimized(
                             processed_frames,
@@ -2122,11 +2141,11 @@ if uploaded_file:
                             st.metric("Lattice source", lattice_source_display)
 
                         # File preview
-                        with st.expander("📋 Preview Enhanced XYZ File (first 20 lines)"):
-                            preview_lines = xyz_content.split('\n')[:20]
-                            st.code('\n'.join(preview_lines))
-                            if len(xyz_content.split('\n')) > 20:
-                                st.caption(f"... and {len(xyz_content.split('\n')) - 20} more lines")
+                        #with st.expander("📋 Preview Enhanced XYZ File (first 20 lines)"):
+                        #preview_lines = xyz_content.split('\n')[:20]
+                        #st.code('\n'.join(preview_lines))
+                        #if len(xyz_content.split('\n')) > 20:
+                        #    st.caption(f"... and {len(xyz_content.split('\n')) - 20} more lines")
 
                     except Exception as e:
                         st.error(f"Error generating enhanced XYZ file: {str(e)}")
