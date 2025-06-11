@@ -2,7 +2,7 @@
 GUI for calculating partial radial distribution functions (PRDF) and RDF from CP2K XYZ or LAMMPS trajectories. Additionally, it can union files for XYZ atomic configurations and CELL file from CP2K. Video tutorial will be available at July.
 ![Initial page of lammps/xyz trajectory analysis.](lammps-xyz-trajectories/1.png)
 
-# How to compile
+## How to compile
 1) git clone https://github.com/bracerino/PRDF-CP2K-LAMMPS.git
 3) cd PRDF-CP2K-LAMMPS/
 4) python3 -m venv prdf_env
@@ -10,7 +10,7 @@ GUI for calculating partial radial distribution functions (PRDF) and RDF from CP
 6) pip install -r requirements.txt
 7) streamlit run app.py
 
-# Tested versions of Python and packages
+## Tested versions of Python and packages
 - Python 3.13.3
 
 - streamlit 1.45.1
