@@ -1,5 +1,6 @@
 # PRDF-CP2K-LAMMPS
 GUI for calculating partial radial distribution functions (PRDF) and RDF from CP2K XYZ or LAMMPS trajectories. Additionally, it can union files for XYZ atomic configurations and CELL file from CP2K. Video tutorial will be available at July.
+![Point defects module illustration](Point_Defects_Module/point_defects_1.png)
 
 # How to compile
 1) git clone https://github.com/bracerino/PRDF-CP2K-LAMMPS.git
@@ -20,3 +21,6 @@ GUI for calculating partial radial distribution functions (PRDF) and RDF from CP
 - pandas 2.2.3
 - scipy 1.15.3
 - matplotlib 3.10.3
+
+## Workflow overview
+- 
